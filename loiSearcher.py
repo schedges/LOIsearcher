@@ -19,7 +19,7 @@ nResultsToShow=10
 #How many preview words to show
 nPreviewChars=400
 
-#Require case sensitivity
+#Require case sensitivity by setting=1
 caseSensitive=0
 
 #Open input file
@@ -85,5 +85,5 @@ for i in range(0,nResultsToShow):
   # Search ranking #. Frontier - Filename
   # Text preview
   print(color.BOLD +str(i+1)+". "+matchingLOIs[i][0]+" - "+matchingLOIs[i][1] + " - " + str(matchingLOIs[i][3]) + " occurrences" + color.END)
-  print(matchingLOIs[i][2][0:charsToDisplay]+"\n")
+  print(matchingLOIs[i][2][0:charsToDisplay]+"...\n")
 f.close()
