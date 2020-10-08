@@ -19,7 +19,7 @@ nResultsToShow=10
 nPreviewChars=400
 
 #Require case sensitivity
-caseSensitive=1
+caseSensitive=0
 
 #Open input file
 inpFilename="LOIs.pickle"
