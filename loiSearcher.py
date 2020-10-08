@@ -1,6 +1,6 @@
 # Run from same folder as LOIs.pickle. Searches LOI text for search word, and
 # returns results with most occurrences of that word. Input a frontier to limit
-# search, otherwise searches all LOIs. Probably will not work well if the search
+# search, otherwise searches all frontiers. Probably will not work well if the search
 # term has special characters.
 #
 # Can edit nResultsToShow to change number of results shown
@@ -26,7 +26,7 @@ caseSensitive=0
 inpFilename="LOIs.pickle"
 f = open(inpFilename, 'rb')
 
-#Load loiList, three columns: Frontier, Filename, Text
+#Load loiList, three columns: [[Frontier, Filename, Text]]
 loiList = pickle.load(f)
 
 #Ask user if they want to limit search to a specific frontier
@@ -50,7 +50,7 @@ try:
 except SyntaxError:
   pass
 
-#Step through LOIs, searching for word (case insensitive).
+#Step through LOIs, searching for word
 matchingLOIs=[]
 for loi in loiList:
   if caseSensitive==1:
@@ -75,7 +75,7 @@ if len(matchingLOIs)<nResultsToShow:
   
 #Display top results
 for i in range(0,nResultsToShow):
-  #Check there are enough characters to display the intended preview length. If not, shorten it.
+  #Check there are enough characters to display the intended preview length. If not, shorten how many are displayed.
   if len(matchingLOIs[i][2]) < nPreviewChars:
     charsToDisplay=len(matchingLOIs[i][2])
   else:

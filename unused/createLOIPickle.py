@@ -1,19 +1,29 @@
+# Creates pickled list of LOIs. Format of list is [["Frontier","Filename","Text"]].
+#
+# Only included to show how pickled data set was created, you do not need to run this
+# if LOIs.pickle already exists.
+#
+# Assumes the folder this script is called from contains subfolders corresponding to the
+# frontier names filled with PDFs.
 import os
 import pdfplumber
 import string
 import re
 import pickle
 
+#These should be subfolders in the directory this script is called from
 frontiers=["AF","CF","CommF","CompF","EF","IF","NF","RF","TF","UF"]
 
+outfile="LOIs.pickle"
 
-outfile="LOI_db.zip"
+#List to hold LOIs
 loiList=[]
 
 #Step through frontier folders
 for frontier in frontiers:
 
-  if os.path.isdir(frontier): #Make sure it's a folder
+  #Make sure it's a folder
+  if os.path.isdir(frontier):
     #Get all PDF files
     files = [i for i in os.listdir(frontier) if i.endswith(".pdf")]
     files.sort()
@@ -21,6 +31,7 @@ for frontier in frontiers:
     #Step through PDF files
     for i,file in enumerate(files):
     
+      #User feedback
       if i%10==0:
         print("On file "+str(i)+" of "+str(len(files))+" of frontier "+frontier)
         
@@ -42,7 +53,8 @@ for frontier in frontiers:
         
       #Remove newline
       string=string.replace("\n"," ")
-      #Remove extra white spaces--is this necessary?
+      
+      #Remove extra white spaces--not sure this is necessary.
       string=" ".join(string.split())
         
       #Add to list
