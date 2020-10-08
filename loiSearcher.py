@@ -7,6 +7,8 @@
 # Can edit nPreviewChars to change how many characters are shown for results.
 # Can set caseSensitive to 1 for case sensitive search results
 import pickle
+import sys
+import os
 
 #For bolding text. From https://stackoverflow.com/a/17303428
 class color:
@@ -24,6 +26,9 @@ caseSensitive=0
 
 #Open input file
 inpFilename="LOIs.pickle"
+if not os.path.exists(inpFilename):
+  print("Error! LOIs.pickle not found. Exiting...")
+  sys.exit()
 f = open(inpFilename, 'rb')
 
 #Load loiList, three columns: [[Frontier, Filename, Text]]
