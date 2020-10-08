@@ -51,10 +51,10 @@ except SyntaxError:
 #Step through LOIs, searching for word (case insensitive).
 matchingLOIs=[]
 for loi in loiList:
-  if caseSensitive==0:
-    nTimes = loi[2].lower().count(searchWord.lower())
-  else:
+  if caseSensitive==1:
     nTimes = loi[2].count(searchWord)
+  else:
+    nTimes = loi[2].lower().count(searchWord.lower())
   if nTimes>0:
     matchingLOIs.append([loi[0],loi[1],loi[2],nTimes])
     
