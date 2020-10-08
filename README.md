@@ -7,7 +7,7 @@ Quick python script to search LOIs for user-specified words, returns LOIs with m
 
 # Instructions
 - Run the python script from the folder containing the pickled LOI text (```LOIs.pickle```). 
-- Specify the frontier (e.g. "NF", 'NF', or NF for neutrino frontier). If the user-inputted frontier does not match one of the choices, all frontiers are searched.
+- Specify the frontier (acceptable formats: "NF", 'NF', or NF). If the user-inputted frontier does not match one of the choices, all frontiers are searched.
 - Enter the word to search. The LOIs with the most occurrences of that word are returned, along with their frontier.
 
 # Modifications
