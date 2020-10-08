@@ -1,4 +1,7 @@
 # loiSearcher.py
+## Usage: ```python loiSearcher.py```
+
+## Summary
 Quick python script to search LOIs for user-specified words, returns LOIs with most occurrences of that word. Tested with python 3.7.4 and OS X 10.15.6, not tested with other set-ups. Probably will not work well if searching for special characters.
 
 # Instructions
