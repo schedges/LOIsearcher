@@ -84,6 +84,6 @@ for i in range(0,nResultsToShow):
   #Print:
   # Search ranking #. Frontier - Filename
   # Text preview
-  print(color.BOLD +str(i+1)+". "+matchingLOIs[i][0]+" - "+matchingLOIs[i][1] + color.END)
+  print(color.BOLD +str(i+1)+". "+matchingLOIs[i][0]+" - "+matchingLOIs[i][1] + " - " + str(matchingLOIs[i][3]) + " occurrences" + color.END)
   print(matchingLOIs[i][2][0:charsToDisplay]+"\n")
 f.close()
