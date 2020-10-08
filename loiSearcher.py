@@ -65,7 +65,7 @@ print(color.BOLD+"\nFound "+str(len(matchingLOIs))+" matching LOIs"+color.END)
 
 print("\n====================")
 print("===SEARCH RESULTS===")
-print("====================")
+print("====================\n")
 
 #Update results to display if fewer than nResultsToShow
 if len(matchingLOIs)<nResultsToShow:
@@ -80,6 +80,6 @@ for i in range(0,nResultsToShow):
     charsToDisplay=nPreviewChars
     
   #Print the Frontier - Filename
-  print(color.BOLD +"\n"+str(i+1)+". "+matchingLOIs[i][0]+" - "+matchingLOIs[i][1] + color.END)
-  print(matchingLOIs[i][2][0:charsToDisplay])
+  print(color.BOLD +str(i+1)+". "+matchingLOIs[i][0]+" - "+matchingLOIs[i][1] + color.END)
+  print(matchingLOIs[i][2][0:charsToDisplay]+"\n")
 f.close()
