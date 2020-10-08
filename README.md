@@ -1,6 +1,6 @@
 # loiSearcher.py
 ## Usage: 
-Download loiSearcher.py and LOIs.pickle. From the folder containing both files, run:
+Download loiSearcher.py and LOIs.pickle, then from the folder containing both files, run:
 
 ```python loiSearcher.py```
 
